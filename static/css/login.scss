@@ -1,0 +1,123 @@
+
+input:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0px 1000px  #002347 inset;
+  -webkit-text-fill-color: white !important;
+}
+
+
+
+.login-form{
+  width:400px;
+  height: 430px;
+  border-radius: 4px;
+  border:1px solid #0170aa;
+  box-shadow:inset 0 0 50px  #0170aa ;
+  background: rgba(1,114,172,0.2);
+  position: absolute;
+  right: 0;
+  top:125px;
+
+  .login-title {
+    color: #fff!important;
+    width:100%!important;
+    margin-top:30px!important;
+    text-align: center!important;
+    font-size: 22px;
+  }
+
+}
+.form-group{
+  position: relative;
+  margin-bottom:15px;
+  text-align: center;
+}
+.form-control{
+  width:80%;
+  height:40px;
+  border:none;
+  padding:5px 7px 5px 15px;
+  background:#002347;
+  color:#fff;
+  border:2px solid #0170aa;
+ border-radius: 4px;
+    &:focus, &:focus + .fa{
+      color: #ffffff;
+    }
+}
+.form-group .fa{
+  position: absolute;
+  right:15px;
+  top:17px;
+  color:#999;
+}
+
+.log-status.wrong-entry .form-control, .wrong-entry .form-control + .fa {
+  border-color: #ed1c24;
+  color: #ed1c24;
+}
+.log-btn {
+  background: rgba(15,175,213,1);
+  background: -moz-linear-gradient(top, rgba(15,175,213,1) 0%, rgba(2,89,127,0.93) 92%, rgba(2,89,127,0.92) 100%);
+  background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(15,175,213,1)), color-stop(92%, rgba(2,89,127,0.93)), color-stop(100%, rgba(2,89,127,0.92)));
+  background: -webkit-linear-gradient(top, rgba(15,175,213,1) 0%, rgba(2,89,127,0.93) 92%, rgba(2,89,127,0.92) 100%);
+  background: -o-linear-gradient(top, rgba(15,175,213,1) 0%, rgba(2,89,127,0.93) 92%, rgba(2,89,127,0.92) 100%);
+  background: -ms-linear-gradient(top, rgba(15,175,213,1) 0%, rgba(2,89,127,0.93) 92%, rgba(2,89,127,0.92) 100%);
+  background: linear-gradient(to bottom, rgba(15,175,213,1) 0%, rgba(2,89,127,0.93) 92%, rgba(2,89,127,0.92) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0fafd5', endColorstr='#02597f', GradientType=0 );
+  display:inline-block;
+  position: absolute;
+  bottom: 50px;
+  width:344px;
+  left:31px;
+  font-size:16px;
+  height:50px;
+  color:#fff;
+  text-decoration:none;
+  border:1px solid #0170aa;
+border-radius: 4px;
+  &:focus {
+    -webkit-box-shadow: 0px 0px 5px #0170aa;
+    -moz-box-shadow: 0px 0px 5px #0170aa;
+    box-shadow: 0px 0px 5px #0170aa;
+  }
+}
+
+
+
+.RememberPwd {
+  margin-left: 31px;
+  color: white!important;
+  line-height: 20px;
+  span {
+    display:inline-block;
+    width:10px;
+    height: 10px;
+    border: 3px solid #0170aa;
+    border-radius: 2px;
+    vertical-align: middle;
+  }
+  input {
+    position: absolute;
+    visibility: hidden;
+    &:checked + label {
+      position: absolute;
+      width:10px;
+      height: 10px;
+      background: #00E6FF;
+    }
+  }
+  label {
+    position: absolute;
+    width:10px;
+    height: 10px;
+  }
+
+
+}
+.alert{
+  display:none;
+  font-size:12px;
+  color:#f00;
+  float:left;
+}
+

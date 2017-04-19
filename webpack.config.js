@@ -2,7 +2,7 @@ var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var ExtractTextScss = new ExtractTextPlugin('main.css');
 
 module.exports = {
-    entry: ["./static/js/index.js", 'webpack-dev-server/client?http://0.0.0.0:8080'],
+    entry: ["./static/js/index.js"],
     output: {
         path: "./public",
         filename: "all.js"
@@ -12,7 +12,7 @@ module.exports = {
             {test: /\.(png|jpg|woff|woff2|eot|ttf|svg)$/, loader: "url-loader?limit=8192"},
             {
                 test: /\.scss$/,
-                loader: ExtractTextPlugin.extract("style", "css!sass!autoprefixer")
+                loader: ExtractTextPlugin.extract('style', ['css', 'resolve-url', 'sass'])
             },
             {
                 test: /\.jsx?$/,
@@ -25,8 +25,7 @@ module.exports = {
         ]
 
     },
-    plugins: [ExtractTextScss],
-    postcss: [autoprefixer({browsers: ['last 2 versions']})]
+plugins:[ExtractTextScss]
 
 }
 

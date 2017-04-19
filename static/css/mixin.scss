@@ -1,0 +1,66 @@
+/*mixin  small css can be reused  by wuyiping*/
+
+@mixin AHM($width,$height,$top){
+  position: absolute;
+  top:$top;
+  left: 50%;
+  margin-left: -$width/2;
+  width: $width;
+  height: $height;
+}
+
+@mixin GradientColor($color1,$color2,$type){
+  @if $type == top {
+     $drec:top;
+     background: -webkit-gradient(left top, left bottom, color-stop(0%, $color1), color-stop(100%, $color2));
+    background: linear-gradient(to bottom, $color1 0%, $color2 100%);
+
+    background: $color1;
+    background: -moz-linear-gradient($drec, $color1 0%, $color2 100%);
+    background: -webkit-linear-gradient($drec, $color1 0%,  $color2 100%);
+    background: -o-linear-gradient($drec, $color1 0%,$color2 100%);
+    background: -ms-linear-gradient($drec, $color1 0%,$color2 100%);
+  }@else if $type == left {
+    $drec:left;
+    background: -webkit-gradient(left top, right top, color-stop(0%, $color1), color-stop(100%, $color2));
+    background: linear-gradient(to right, $color1 0%, $color2 100%);
+
+
+    background: $color1;
+    background: -moz-linear-gradient($drec, $color1 0%, $color2 100%);
+    background: -webkit-linear-gradient($drec, $color1 0%,  $color2 100%);
+    background: -o-linear-gradient($drec, $color1 0%,$color2 100%);
+    background: -ms-linear-gradient($drec, $color1 0%,$color2 100%);
+  }
+
+  //background: $color1;
+  //background: -moz-linear-gradient($drec, $color1 0%, $color2 100%);
+  //background: -webkit-linear-gradient($drec, $color1 0%,  $color2 100%);
+  //background: -o-linear-gradient($drec, $color1 0%,$color2 100%);
+  //background: -ms-linear-gradient($drec, $color1 0%,$color2 100%);
+ // zhan shi bu zhi chi ie :)
+}
+
+@mixin transition($prop,$time){
+  -webkit-transition: $prop $time;
+  -moz-transition: $prop $time;
+  -ms-transition: $prop $time;
+  -o-transition: $prop $time;
+  transition: $prop $time;
+}
+
+@mixin transform($value){
+  -webkit-transform: $value;
+  -moz-transform: $value;
+  -ms-transform: $value;
+  -o-transform: $value;
+  transform: $value;
+}
+
+@mixin yahei($size,$color){
+  font-family: "Microsoft YaHei";
+  font-size: $size;
+  color: $color;
+}
+
+

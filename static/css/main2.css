@@ -1,0 +1,10 @@
+body {
+    background: red;
+}
+
+.Ok {
+    width:16px;
+    height: 16px;
+    background: url("../img/Ok.png") no-repeat;
+    background-size: cover;
+}

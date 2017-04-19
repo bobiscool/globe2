@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <style>
+
+        body,html {
+            width:100%;
+            height:100%;
+        }
+
+        #Animation {
+            position: absolute;
+            width:400px;
+            height:400px;
+        }
+        #BgEarth {
+            position: absolute;
+            /*left: -400px;*/
+            /*top:-200px;*/
+            /*transform: scale(0.5);*/
+        }
+    </style>
+</head>
+<body>
+
+<div id="Animation">
+    <canvas id="BgEarth"  width="1028" height="558">
+        现在是HTML5 CSS3蓬勃发展的时代。。而你却还在使用10年前的浏览器。。那年我还在读小学呢。。。。。。请换一个的高级一点的浏览器浏览本网页。。。不明白我说的是啥?去找你的儿子或者是孙子。。。让他帮你下载一个叫做Chrome的浏览器。。。对了最好是最新版
+    </canvas>
+</div>
+<script src="../js/easeljs-0.8.2.min.js"></script>
+<script>
+
+        var stage = new createjs.Stage("BgEarth");
+        var BgEarth1 = null,
+        BgEarth2 = null;
+        var img = new Image();
+        img.src = "../img/new.png";
+        img.onload = function () {
+            init();
+        };
+
+        function init() {
+             BgEarth1 = new createjs.Bitmap(img);
+             BgEarth2 = new createjs.Bitmap(img);
+            BgEarth1.x=-0.9*img.width;
+            BgEarth2.x=.1*img.width;
+            var React = new createjs.Shape();
+            stage.addChild(BgEarth1);
+            stage.addChild(BgEarth2);
+            React.graphics.beginFill("rgba(255,255,255,0.1)").drawRoundRect(img.width*0.1,0,img.width*0.8,img.height,300);
+            BgEarth1.mask = React;
+            BgEarth2.mask = React;
+            stage.addChild(React);
+
+            stage.update();
+
+            createjs.Ticker.timingMode = createjs.Ticker.RAF;
+            createjs.Ticker.addEventListener("tick",tick);
+        }
+
+
+        function tick(event) {
+            BgEarth1.x +=.1;
+            BgEarth2.x +=.1;
+            if(BgEarth1.x>.9*img.width){
+                BgEarth1.x=-.9*img.width;
+            }
+            if(BgEarth2.x>.9*img.width){
+                BgEarth2.x=-.9*img.width;
+            }
+            stage.update(event);
+        }
+
+</script>
+</body>
+</html>
